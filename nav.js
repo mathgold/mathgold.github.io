@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let navHTML = '<nav><ul class="nav-list">';
+  
   navLinks.forEach(link => {
     let classActive = '';
     if (!link.external) {
@@ -26,22 +27,28 @@ document.addEventListener('DOMContentLoaded', () => {
       ) {
         classActive = 'active';
       }
-
-      // Highlight Projects tab if on projects.html or any project detail page
+      // Highlight Projects tab on projects.html or project detail pages
       if (
         link.href === 'projects.html' &&
         (window.location.pathname.endsWith('projects.html') ||
-          window.location.pathname.match(/project[1-3]\.html$/))
+          /project[1-3]\.html$/.test(window.location.pathname))
       ) {
         classActive = 'active';
       }
     }
+    
     const target = link.external ? '_blank' : '_self';
     const rel = link.external ? 'noopener noreferrer' : '';
     const classNames = [classActive, link.className].filter(Boolean).join(' ');
-    navHTML += `<li class="nav-item"><a href="${link.href}" class="${classNames}" target="${target}" rel="${rel}">${link.text}</a></li>`;
+    const ariaLabel = link.external ? 'aria-label="LinkedIn Profile"' : '';
+    
+    navHTML += `<li class="nav-item">
+      <a href="${link.href}" class="${classNames}" target="${target}" rel="${rel}" ${ariaLabel}>
+        ${link.text}
+      </a>
+    </li>`;
   });
-  navHTML += '</ul></nav>';
 
+  navHTML += '</ul></nav>';
   navContainer.innerHTML = navHTML;
 });
