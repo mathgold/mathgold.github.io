@@ -8,20 +8,19 @@
 }
 
 :root {
-  --color-bg: #f1f4f8; /* Light grayish-blue background for a clean, modern feel */
-  --color-text: #2d3748; /* Dark, warm gray for text, maintaining readability */
-  --color-header-bg: #2a3d66; /* Deep navy for a strong, professional header background */
-  --color-header-text: #e1e9f0; /* Light, soft blue-gray for text on the header */
-  --color-link-hover: #3a8d99; /* Bold teal for a fresh and subtle link hover effect */
-  --color-section-heading: #2b4b66; /* Rich navy-blue for section titles */
-  --color-paragraph: #4a5568; /* Medium-dark gray with a hint of blue for body text */
-  --color-project-title: #1e2a47; /* Darker navy for project titles */
-  --color-project-text: #6b7c8e; /* Muted blue-gray for project descriptions */
-  --color-hover-bg: #e1e9f0; /* Light blue background for hover effect */
-  --color-active-link: #3a8d99; /* Teal for active link */
+  --color-bg: #f1f4f8;
+  --color-text: #2d3748;
+  --color-header-bg: #2a3d66;
+  --color-header-text: #e1e9f0;
+  --color-link-hover: #3a8d99;
+  --color-section-heading: #2b4b66;
+  --color-paragraph: #4a5568;
+  --color-project-title: #1e2a47;
+  --color-project-text: #6b7c8e;
+  --color-hover-bg: #e1e9f0;
+  --color-active-link: #3a8d99;
 }
 
-/* General Styles */
 html {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 16px;
@@ -37,7 +36,6 @@ body {
   flex-direction: column;
 }
 
-/* Container */
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -50,7 +48,6 @@ header {
   color: var(--color-header-text);
   text-align: center;
   padding: 1rem 0;
-  font-size: 0.9rem;
   position: relative;
 }
 
@@ -137,30 +134,6 @@ nav {
   }
 }
 
-/* Main Content */
-main {
-  flex-grow: 1;
-  padding: 2rem 0;
-}
-
-/* Section Box */
-.section-box {
-  padding: 20px;
-  margin-top: 20px;
-  border: 1px solid #ddd;
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: var(--color-section-heading);
-}
-
-p {
-  font-size: 1rem;
-  color: var(--color-paragraph);
-}
-
-/* Footer */
 footer {
   background-color: var(--color-header-bg);
   color: var(--color-header-text);
@@ -168,21 +141,4 @@ footer {
   padding: 1rem 0;
   font-size: 0.9rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Accessibility & Focus Styles */
-a:focus,
-button:focus {
-  outline: 2px solid var(--color-link-hover);
-  outline-offset: 4px;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .container {
-    padding: 1rem;
-  }
 }
