@@ -8,16 +8,15 @@
 }
 
 :root {
---color-bg: #f1f4f8; /* Light grayish-blue background for a clean, modern feel */
---color-text: #2d3748; /* Dark, warm gray for text, maintaining readability */
---color-header-bg: #2a3d66; /* Deep navy for a strong, professional header background */
---color-header-text: #e1e9f0; /* Light, soft blue-gray for text on the header */
---color-link-hover: #3a8d99; /* Bold teal for a fresh and subtle link hover effect */
---color-section-heading: #2b4b66; /* Rich navy-blue for section titles */
---color-paragraph: #4a5568; /* Medium-dark gray with a hint of blue for body text */
---color-project-title: #1e2a47; /* Darker navy for project titles */
---color-project-text: #6b7c8e; /* Muted blue-gray for project descriptions */
-
+  --color-bg: #f1f4f8; /* Light grayish-blue background for a clean, modern feel */
+  --color-text: #2d3748; /* Dark, warm gray for text, maintaining readability */
+  --color-header-bg: #2a3d66; /* Deep navy for a strong, professional header background */
+  --color-header-text: #e1e9f0; /* Light, soft blue-gray for text on the header */
+  --color-link-hover: #3a8d99; /* Bold teal for a fresh and subtle link hover effect */
+  --color-section-heading: #2b4b66; /* Rich navy-blue for section titles */
+  --color-paragraph: #4a5568; /* Medium-dark gray with a hint of blue for body text */
+  --color-project-title: #1e2a47; /* Darker navy for project titles */
+  --color-project-text: #6b7c8e; /* Muted blue-gray for project descriptions */
 }
 
 html {
@@ -59,123 +58,45 @@ header h1 {
   margin-bottom: 0.25rem;
 }
 
-/* Navigation */
-nav {
-  margin-top: 0.5rem;
-}
-
-/* Nav list styling */
-.nav-list {
-  list-style: none;
-  display: flex;
-  justify-content: center; /* CENTER the nav horizontally */
-  gap: 2rem; /* spacing between nav items */
-  padding: 0;
-}
-
-/* Each nav item */
-.nav-item a {
-  color: var(--color-header-text);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.25em;
-  cursor: pointer;
-}
-
-/* Hover and active states */
-.nav-item a:hover,
-.nav-item a.active {
-  color: var(--color-link-hover);
-  font-weight: 700;
-  background-color: rgba(99, 179, 237, 0.15);
-}
-
-/* Keyboard focus visible */
-.nav-item a:focus-visible {
-  outline: 3px solid var(--color-link-hover);
-  outline-offset: 2px;
-}
-
-/* LinkedIn Icon Specific Styling */
-.nav-item a.linkedin-icon {
-  padding: 0;
-  margin: 0 0.3rem;
-}
-
-.nav-item a.linkedin-icon svg {
-  fill: var(--color-header-text);
-  height: 1.2em;
-  width: 1.2em;
-  display: block;
-  transition: transform 0.3s ease;
-  max-width: 1.2em;
-  max-height: 1.2em;
-}
-
-.nav-item a.linkedin-icon:hover svg {
-  transform: scale(1.1);
-}
-
 /* Main Content */
 main {
   flex-grow: 1;
   padding: 2rem 0;
 }
 
-/* Sections */
-section {
-  margin-bottom: 3rem;
+/* Section Box Style */
+.section-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect on the box */
+.section-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Title */
 section h2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   color: var(--color-section-heading);
+  font-weight: 700;
 }
 
+/* Section Paragraph */
 section p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--color-paragraph);
 }
 
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: inherit;
-  text-decoration: none;
-  display: block;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--color-project-title);
-}
-
-.project-card p {
-  font-size: 0.9rem;
-  color: var(--color-project-text);
+/* Footer Styling */
+footer {
+  font-size: 1rem;
 }
 
 /* Responsive */
@@ -184,12 +105,7 @@ section p {
     font-size: 1.5rem;
   }
 
-  .nav-list {
-    gap: 1rem;
-  }
-
-  .nav-item a {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+  .container {
+    padding: 1rem;
   }
 }
