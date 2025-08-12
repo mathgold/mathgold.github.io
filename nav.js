@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navContainer = document.getElementById('nav-placeholder');
   if (!navContainer) return;
 
+  // Define the navigation links and their properties
   const navLinks = [
     { href: 'index.html', text: 'Home' },
     { href: 'about.html', text: 'About Me' },
@@ -17,9 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
+  // Start creating the HTML for the nav
   let navHTML = '<nav><ul class="nav-list">';
+
+  // Loop through each link and determine if it should be active
   navLinks.forEach(link => {
     let classActive = '';
+    
+    // Check if the current page is the same as the link target
     if (!link.external) {
       if (
         window.location.pathname.endsWith(link.href) ||
@@ -28,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         classActive = 'active';
       }
 
-      // Highlight Projects tab if on projects.html or any project detail page
+      // Special condition for the Projects page or project detail pages
       if (
         link.href === 'projects.html' &&
         (window.location.pathname.endsWith('projects.html') ||
@@ -37,12 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         classActive = 'active';
       }
     }
+    
+    // Define link target and rel attributes for external links
     const target = link.external ? '_blank' : '_self';
     const rel = link.external ? 'noopener noreferrer' : '';
+    
+    // Combine all relevant class names
     const classNames = [classActive, link.className].filter(Boolean).join(' ');
+
+    // Create the <li> for each link
     navHTML += `<li class="nav-item"><a href="${link.href}" class="${classNames}" target="${target}" rel="${rel}">${link.text}</a></li>`;
   });
+
   navHTML += '</ul></nav>';
 
+  // Inject the navigation HTML into the placeholder
   navContainer.innerHTML = navHTML;
 });
