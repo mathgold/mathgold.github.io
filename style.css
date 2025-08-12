@@ -8,15 +8,16 @@
 }
 
 :root {
---color-bg: #f1f5f9; /* Soft, clean light blue-gray background for a modern feel */
---color-text: #2d3748; /* Warm, dark gray for text that's easy on the eyes */
---color-header-bg: #4fd1c5; /* Bright, fresh teal for the header background */
---color-header-text: #ffffff; /* Crisp white for text on the header */
---color-link-hover: #38b2ac; /* Muted teal for subtle but visible link hover effect */
---color-section-heading: #2b6cb0; /* Soft yet rich blue for section titles */
---color-paragraph: #4a5568; /* Neutral gray for the body text */
---color-project-title: #2c5282; /* Sophisticated blue for project titles */
---color-project-text: #718096; /* Light, neutral gray for project descriptions */
+--color-bg: #f1f4f8; /* Light grayish-blue background for a clean, modern feel */
+--color-text: #2d3748; /* Dark, warm gray for text, maintaining readability */
+--color-header-bg: #2a3d66; /* Deep navy for a strong, professional header background */
+--color-header-text: #e1e9f0; /* Light, soft blue-gray for text on the header */
+--color-link-hover: #3a8d99; /* Bold teal for a fresh and subtle link hover effect */
+--color-section-heading: #2b4b66; /* Rich navy-blue for section titles */
+--color-paragraph: #4a5568; /* Medium-dark gray with a hint of blue for body text */
+--color-project-title: #1e2a47; /* Darker navy for project titles */
+--color-project-text: #6b7c8e; /* Muted blue-gray for project descriptions */
+
 }
 
 html {
