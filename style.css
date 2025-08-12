@@ -1,3 +1,25 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f1f4f8;
+  --color-text: #2d3748;
+  --color-header-bg: #2a3d66;
+  --color-header-text: #e1e9f0;
+  --color-link-hover: #3a8d99;
+  --color-section-heading: #2b4b66;
+  --color-paragraph: #4a5568;
+  --color-project-title: #1e2a47;
+  --color-project-text: #6b7c8e;
+  --color-hover-bg: #e1e9f0;
+  --color-active-link: #3a8d99;
+}
 
 html {
   font-family: 'Inter', Arial, sans-serif;
@@ -47,12 +69,12 @@ nav {
 .nav-list {
   list-style: none;
   display: flex;
-  justify-content: center; /* CENTER the nav horizontally */
-  gap: 2rem; /* spacing between nav items */
+  justify-content: center; /* Center nav horizontally */
+  gap: 2rem; /* Space between nav items */
   padding: 0;
 }
 
-/* Each nav item */
+/* Each nav item anchor */
 .nav-item a {
   color: var(--color-header-text);
   text-decoration: none;
@@ -67,7 +89,7 @@ nav {
   cursor: pointer;
 }
 
-/* Hover and active states */
+/* Hover and active link states */
 .nav-item a:hover,
 .nav-item a.active {
   color: var(--color-link-hover);
@@ -83,18 +105,22 @@ nav {
 
 /* LinkedIn Icon Specific Styling */
 .nav-item a.linkedin-icon {
-  padding: 0;
-  margin: 0 0.3rem;
+  padding: 0 0.4rem;
+  margin-left: 0.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .nav-item a.linkedin-icon svg {
   fill: var(--color-header-text);
-  height: 1.2em;
-  width: 1.2em;
-  display: block;
+  height: 18px;             /* Fixed size to match nav text */
+  width: 18px;
+  display: block;           /* Prevent baseline alignment issues */
+  position: relative;
+  top: 2px;                 /* Nudge down for vertical alignment */
   transition: transform 0.3s ease;
-  max-width: 1.2em;
-  max-height: 1.2em;
 }
 
 .nav-item a.linkedin-icon:hover svg {
