@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ];
 
   let navHTML = '<nav><ul class="nav-list">';
-  
+
   navLinks.forEach(({ href, text, external = false, className = '', ariaLabel = '' }) => {
     let isActive = false;
     if (!external) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (path.endsWith(href) || (path === '/' && href === 'index.html')) {
         isActive = true;
       }
-      // Highlight Projects on projects.html and project detail pages
+      // Highlight Projects tab if on projects or project detail pages
       if (
         href === 'projects.html' &&
         (path.endsWith('projects.html') || /project[1-3]\.html$/.test(path))
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         isActive = true;
       }
     }
+
     const classes = [isActive ? 'active' : '', className].filter(Boolean).join(' ');
     const target = external ? '_blank' : '_self';
     const rel = external ? 'noopener noreferrer' : '';
