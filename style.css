@@ -115,15 +115,12 @@ nav {
 
 .nav-item a.linkedin-icon svg {
   fill: var(--color-header-text);
-  height: 1.1em;           /* Matches nav link font-size */
-  width: 1.1em;
-  display: inline-block;   /* Inline with text */
-  vertical-align: middle;
+  height: 18px;             /* Fixed size to match nav text */
+  width: 18px;
+  display: block;           /* Prevent baseline alignment issues */
   position: relative;
-  top: 0;
+  top: 2px;                 /* Nudge down for vertical alignment */
   transition: transform 0.3s ease;
-  max-width: none;
-  max-height: none;
 }
 
 .nav-item a.linkedin-icon:hover svg {
