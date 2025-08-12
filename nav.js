@@ -1,56 +1,196 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navContainer = document.getElementById('nav-placeholder');
-  if (!navContainer) return;
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  const navLinks = [
-    { href: 'index.html', text: 'Home' },
-    { href: 'about.html', text: 'About Me' },
-    { href: 'projects.html', text: 'Projects' },
-    {
-      href: 'https://www.linkedin.com/in/martinthomasgold',
-      text: `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true" role="img">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.327-.025-3.036-1.85-3.036-1.852 0-2.134 1.445-2.134 2.939v5.666H9.36V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.372-1.85 3.605 0 4.271 2.372 4.271 5.455v6.286zM5.337 7.433a2.07 2.07 0 1 1 0-4.141 2.07 2.07 0 0 1 0 4.141zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .792 0 1.77v20.451C0 23.208.792 24 1.77 24h20.451c.978 0 1.778-.792 1.778-1.778V1.77C24 .792 23.208 0 22.225 0z"/>
-        </svg>
-      `,
-      external: true,
-      className: 'linkedin-icon',
-      ariaLabel: 'LinkedIn Profile'
-    }
-  ];
+:root {
+  --color-bg: #f9fafb;
+  --color-text: #1a202c;
+  --color-header-bg: #2c5282;
+  --color-header-text: #edf2f7;
+  --color-link-hover: #63b3ed;
+  --color-section-heading: #2a4365;
+  --color-paragraph: #4a5568;
+  --color-project-title: #2c5282;
+  --color-project-text: #718096;
+}
 
-  let navHTML = '<nav><ul class="nav-list">';
+html {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 16px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
 
-  navLinks.forEach(({ href, text, external = false, className = '', ariaLabel = '' }) => {
-    let isActive = false;
-    if (!external) {
-      const path = window.location.pathname;
-      if (path.endsWith(href) || (path === '/' && href === 'index.html')) {
-        isActive = true;
-      }
-      // Highlight Projects tab if on projects or project detail pages
-      if (
-        href === 'projects.html' &&
-        (path.endsWith('projects.html') || /project[1-3]\.html$/.test(path))
-      ) {
-        isActive = true;
-      }
-    }
+body {
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-    const classes = [isActive ? 'active' : '', className].filter(Boolean).join(' ');
-    const target = external ? '_blank' : '_self';
-    const rel = external ? 'noopener noreferrer' : '';
-    const aria = external && ariaLabel ? `aria-label="${ariaLabel}"` : '';
+/* Container */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
 
-    navHTML += `
-      <li class="nav-item">
-        <a href="${href}" class="${classes}" target="${target}" rel="${rel}" ${aria}>
-          ${text}
-        </a>
-      </li>
-    `;
-  });
+/* Header & Footer */
+header,
+footer {
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 0.9rem;
+}
 
-  navHTML += '</ul></nav>';
-  navContainer.innerHTML = navHTML;
-});
+header h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Navigation */
+nav {
+  margin-top: 0.5rem;
+}
+
+/* Nav list styling */
+.nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center; /* center nav horizontally */
+  gap: 2rem; /* spacing between nav items */
+  padding: 0;
+}
+
+/* Each nav item */
+.nav-item a {
+  color: var(--color-header-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  cursor: pointer;
+}
+
+/* Hover and active states */
+.nav-item a:hover,
+.nav-item a.active {
+  color: var(--color-link-hover);
+  font-weight: 700;
+  background-color: rgba(99, 179, 237, 0.15);
+}
+
+/* Keyboard focus visible */
+.nav-item a:focus-visible {
+  outline: 3px solid var(--color-link-hover);
+  outline-offset: 2px;
+}
+
+/* LinkedIn Icon Specific Styling */
+.nav-item a.linkedin-icon {
+  padding: 0;
+  margin: 0 0.3rem;
+}
+
+.nav-item a.linkedin-icon svg {
+  fill: var(--color-header-text);
+  height: 1.2em;
+  width: 1.2em;
+  display: block;
+  transition: transform 0.3s ease;
+  max-width: 1.2em;
+  max-height: 1.2em;
+  position: relative;
+  top: 2px; /* Nudge icon down for vertical alignment */
+}
+
+.nav-item a.linkedin-icon:hover svg {
+  transform: scale(1.1);
+}
+
+/* Main Content */
+main {
+  flex-grow: 1;
+  padding: 2rem 0;
+}
+
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: var(--color-section-heading);
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-paragraph);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: var(--color-project-title);
+}
+
+.project-card p {
+  font-size: 0.9rem;
+  color: var(--color-project-text);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-list {
+    gap: 1rem;
+  }
+
+  .nav-item a {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+  }
+}
