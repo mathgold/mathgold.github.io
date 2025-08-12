@@ -69,12 +69,12 @@ nav {
 .nav-list {
   list-style: none;
   display: flex;
-  justify-content: center; /* CENTER the nav horizontally */
-  gap: 2rem; /* spacing between nav items */
+  justify-content: center; /* Center nav horizontally */
+  gap: 2rem; /* Space between nav items */
   padding: 0;
 }
 
-/* Each nav item */
+/* Each nav item anchor */
 .nav-item a {
   color: var(--color-header-text);
   text-decoration: none;
@@ -89,7 +89,7 @@ nav {
   cursor: pointer;
 }
 
-/* Hover and active states */
+/* Hover and active link states */
 .nav-item a:hover,
 .nav-item a.active {
   color: var(--color-link-hover);
@@ -105,9 +105,9 @@ nav {
 
 /* LinkedIn Icon Specific Styling */
 .nav-item a.linkedin-icon {
-  padding: 0 0.25rem;       /* horizontal padding */
-  margin-left: 0.3rem;      /* space from previous item */
-  display: inline-flex;     /* inline flex for perfect vertical centering */
+  padding: 0 0.4rem;
+  margin-left: 0.3rem;
+  display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -115,9 +115,9 @@ nav {
 
 .nav-item a.linkedin-icon svg {
   fill: var(--color-header-text);
-  height: 1em;              /* match nav link font size */
-  width: 1em;
-  display: inline-block;    /* inline with text */
+  height: 1.1em;           /* Matches nav link font-size */
+  width: 1.1em;
+  display: inline-block;   /* Inline with text */
   vertical-align: middle;
   position: relative;
   top: 0;
