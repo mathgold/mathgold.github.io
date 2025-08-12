@@ -125,14 +125,82 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .container {
-    padding: 1rem;
-  }
+/* Focus styles for links (accessibility improvement) */
+nav ul li a:focus {
+  outline: 2px solid var(--color-link-hover);
+  outline-offset: 4px;
 }
 
+/* Navigation styling */
+nav {
+  background-color: var(--color-header-bg);
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: var(--color-link-hover);
+}
+
+/* Style for active link */
+nav ul li a.active {
+  color: var(--color-link-hover);
+  font-weight: bold;
+}
+
+/* Hamburger menu for mobile */
+@media (max-width: 600px) {
+  .nav-list {
+    display: none; /* Hide the nav links initially */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-list.active {
+    display: flex; /* Show the nav links when active */
+  }
+
+  /* Hamburger Icon Style */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    height: 5px;
+    background-color: #fff;
+    width: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
