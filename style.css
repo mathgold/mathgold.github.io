@@ -8,16 +8,15 @@
 }
 
 :root {
---color-bg: #f4f7f6; /* Soft off-white with a hint of gray for a light feel */
---color-text: #4e4f56; /* Warm gray for a softer, more inviting text color */
---color-header-bg: #5f6368; /* A sophisticated muted slate gray for the header */
---color-header-text: #e0e3e4; /* Light, airy gray for header text */
---color-link-hover: #00bcd4; /* Vibrant teal that gives a modern pop for links */
---color-section-heading: #3b4349; /* Subtle, deep gray-blue for section headings */
---color-paragraph: #666e73; /* Muted gray with a touch of warmth for body text */
---color-project-title: #3a8d99; /* Soft teal for project titles, fresh but not too loud */
---color-project-text: #8a9299; /* Light muted gray with a touch of blue for descriptions */
-
+--color-bg: #f1f5f9; /* Soft, clean light blue-gray background for a modern feel */
+--color-text: #2d3748; /* Warm, dark gray for text that's easy on the eyes */
+--color-header-bg: #4fd1c5; /* Bright, fresh teal for the header background */
+--color-header-text: #ffffff; /* Crisp white for text on the header */
+--color-link-hover: #38b2ac; /* Muted teal for subtle but visible link hover effect */
+--color-section-heading: #2b6cb0; /* Soft yet rich blue for section titles */
+--color-paragraph: #4a5568; /* Neutral gray for the body text */
+--color-project-title: #2c5282; /* Sophisticated blue for project titles */
+--color-project-text: #718096; /* Light, neutral gray for project descriptions */
 }
 
 html {
