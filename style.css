@@ -1,3 +1,23 @@
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-bg: #f9fafb;
+  --color-text: #1a202c;
+  --color-header-bg: #2c5282;
+  --color-header-text: #edf2f7;
+  --color-link-hover: #63b3ed;
+  --color-section-heading: #2a4365;
+  --color-paragraph: #4a5568;
+  --color-project-title: #2c5282;
+  --color-project-text: #718096;
+}
 
 html {
   font-family: 'Inter', Arial, sans-serif;
