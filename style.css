@@ -8,15 +8,15 @@
 }
 
 :root {
-  --color-bg: #f9fafb;
-  --color-text: #1a202c;
-  --color-header-bg: #2c5282;
-  --color-header-text: #edf2f7;
-  --color-link-hover: #63b3ed;
-  --color-section-heading: #2a4365;
-  --color-paragraph: #4a5568;
-  --color-project-title: #2c5282;
-  --color-project-text: #718096;
+  --color-bg: #f8f9fa; /* Slightly warmer background */
+  --color-text: #333333; /* Darker, richer text for readability */
+  --color-header-bg: #1c1f26; /* Darker, more sophisticated header */
+  --color-header-text: #f5f7fa; /* Soft light text on dark header */
+  --color-link-hover: #4f81a1; /* Muted blue-gray for subtlety */
+  --color-section-heading: #333c47; /* Deep grayish-blue for section titles */
+  --color-paragraph: #555555; /* Medium dark gray for body text */
+  --color-project-title: #2a3a44; /* Subtle dark teal for project titles */
+  --color-project-text: #6c757d; /* Muted grayish tones for project descriptions */
 }
 
 html {
