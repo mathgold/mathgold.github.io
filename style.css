@@ -21,7 +21,6 @@
   --color-active-link: #3a8d99;
 }
 
-
 html {
   font-family: 'Inter', Arial, sans-serif;
   font-size: 16px;
@@ -106,18 +105,25 @@ nav {
 
 /* LinkedIn Icon Specific Styling */
 .nav-item a.linkedin-icon {
-  padding: 0;
-  margin: 0 0.3rem;
+  padding: 0 0.25rem;       /* horizontal padding */
+  margin-left: 0.3rem;      /* space from previous item */
+  display: inline-flex;     /* inline flex for perfect vertical centering */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .nav-item a.linkedin-icon svg {
   fill: var(--color-header-text);
-  height: 1.2em;
-  width: 1.2em;
-  display: block;
+  height: 1em;              /* match nav link font size */
+  width: 1em;
+  display: inline-block;    /* inline with text */
+  vertical-align: middle;
+  position: relative;
+  top: 0;
   transition: transform 0.3s ease;
-  max-width: 1.2em;
-  max-height: 1.2em;
+  max-width: none;
+  max-height: none;
 }
 
 .nav-item a.linkedin-icon:hover svg {
