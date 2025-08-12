@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Me - mathgold</title>
-  <meta name="description" content="Learn more about mathgold." />
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Navigation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Marty's Career Portfolio</h1>
-      <div id="nav-placeholder" aria-label="Primary navigation"></div>
-      <div class="hamburger">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+    <div class="hamburger">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
   </header>
 
-  <main class="container">
-    <section class="section-box">
-      <h2>About Me</h2>
-      <p>Hello! I’m mathgold, a passionate developer focused on building modern, responsive websites.</p>
-      <p>Feel free to explore my projects and get in touch via LinkedIn.</p>
-    </section>
+  <div id="nav-placeholder"></div> <!-- Navigation will be injected here -->
+
+  <main>
+    <!-- Main content goes here -->
+    <h1>Welcome to My Website</h1>
+    <p>Here's some content for the page!</p>
   </main>
 
   <footer>
-    <div class="container">
-      &copy; 2025 mathgold. All rights reserved.
-    </div>
+    <p>Footer Content</p>
   </footer>
 
-  <script src="nav.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.querySelector('.hamburger');
-      const navList = document.querySelector('.nav-list');
-
-      hamburger.addEventListener('click', () => {
-        navList.classList.toggle('active');
-        hamburger.classList.toggle('active');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
