@@ -36,14 +36,12 @@ body {
   flex-direction: column;
 }
 
-/* Container */
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem 2rem;
 }
 
-/* Header & Footer */
 header,
 footer {
   background-color: var(--color-header-bg);
@@ -60,21 +58,19 @@ header h1 {
   margin-bottom: 0.25rem;
 }
 
-/* Navigation */
+/* Navigation styles */
 nav {
   margin-top: 0.5rem;
 }
 
-/* Nav list styling */
 .nav-list {
   list-style: none;
   display: flex;
-  justify-content: center; /* Center nav horizontally */
-  gap: 2rem; /* Space between nav items */
+  justify-content: center;
+  gap: 2rem;
   padding: 0;
 }
 
-/* Each nav item anchor */
 .nav-item a {
   color: var(--color-header-text);
   text-decoration: none;
@@ -83,13 +79,13 @@ nav {
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
   transition: color 0.3s ease, background-color 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.25em;
+  
+  display: inline-flex;       /* inline-flex to align icon & text */
+  align-items: center;        /* vertical center */
+  gap: 0.3em;
   cursor: pointer;
 }
 
-/* Hover and active link states */
 .nav-item a:hover,
 .nav-item a.active {
   color: var(--color-link-hover);
@@ -97,29 +93,23 @@ nav {
   background-color: rgba(99, 179, 237, 0.15);
 }
 
-/* Keyboard focus visible */
 .nav-item a:focus-visible {
   outline: 3px solid var(--color-link-hover);
   outline-offset: 2px;
 }
 
-/* LinkedIn Icon Specific Styling */
+/* LinkedIn icon styling */
 .nav-item a.linkedin-icon {
-  padding: 0 0.4rem;
+  padding: 0 0.2rem;
   margin-left: 0.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .nav-item a.linkedin-icon svg {
   fill: var(--color-header-text);
-  height: 18px;             /* Fixed size to match nav text */
-  width: 18px;
-  display: block;           /* Prevent baseline alignment issues */
-  position: relative;
-  top: 2px;                 /* Nudge down for vertical alignment */
+  width: 1.1em;    /* match nav font size */
+  height: 1.1em;
+  display: inline-block;
+  vertical-align: middle;
   transition: transform 0.3s ease;
 }
 
@@ -127,72 +117,14 @@ nav {
   transform: scale(1.1);
 }
 
-/* Main Content */
-main {
-  flex-grow: 1;
-  padding: 2rem 0;
-}
-
-/* Sections */
-section {
-  margin-bottom: 3rem;
-}
-
-section h2 {
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: var(--color-section-heading);
-}
-
-section p {
-  font-size: 1rem;
-  line-height: 1.5;
-  color: var(--color-paragraph);
-}
-
-/* Projects Grid */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: white;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  color: inherit;
-  text-decoration: none;
-  display: block;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.project-card h3 {
-  margin-bottom: 0.5rem;
-  color: var(--color-project-title);
-}
-
-.project-card p {
-  font-size: 0.9rem;
-  color: var(--color-project-text);
-}
-
 /* Responsive */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.5rem;
   }
-
   .nav-list {
     gap: 1rem;
   }
-
   .nav-item a {
     font-size: 1rem;
     padding: 0.25rem 0.5rem;
