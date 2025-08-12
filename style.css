@@ -99,6 +99,32 @@ footer {
   font-size: 1rem;
 }
 
+/* LinkedIn Icon Specific Styling */
+.nav-item a.linkedin-icon {
+  padding: 0;
+  margin: 0 0.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the icon to the start (top) of the link */
+}
+
+/* Lowering the LinkedIn icon */
+.nav-item a.linkedin-icon svg {
+  fill: var(--color-header-text);
+  height: 1.2em;
+  width: 1.2em;
+  display: block;
+  transition: transform 0.3s ease;
+  max-width: 1.2em;
+  max-height: 1.2em;
+  margin-top: 4px; /* Adjust this value to lower the icon */
+}
+
+/* Hover effect on the icon */
+.nav-item a.linkedin-icon:hover svg {
+  transform: scale(1.1);
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   header h1 {
