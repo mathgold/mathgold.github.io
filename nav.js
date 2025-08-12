@@ -23,12 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinks.forEach(({ href, text, external = false, className = '', ariaLabel = '' }) => {
     let isActive = false;
+
     if (!external) {
       const path = window.location.pathname;
       if (path.endsWith(href) || (path === '/' && href === 'index.html')) {
         isActive = true;
       }
-      // Highlight Projects tab on projects.html or project detail pages
       if (
         href === 'projects.html' &&
         (path.endsWith('projects.html') || /project[1-3]\.html$/.test(path))
