@@ -18,45 +18,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // Start creating the HTML for the nav
-  let navHTML = '<nav><ul class="nav-list">';
-
-  // Loop through each link and determine if it should be active
-  navLinks.forEach(link => {
-    let classActive = '';
-    
-    // Check if the current page is the same as the link target
-    if (!link.external) {
-      if (
-        window.location.pathname.endsWith(link.href) ||
-        (window.location.pathname === '/' && link.href === 'index.html')
-      ) {
-        classActive = 'active';
-      }
-
-      // Special condition for the Projects page or project detail pages
-      if (
-        link.href === 'projects.html' &&
-        (window.location.pathname.endsWith('projects.html') ||
-          window.location.pathname.match(/project[1-3]\.html$/))
-      ) {
-        classActive = 'active';
-      }
-    }
-    
-    // Define link target and rel attributes for external links
+  // Generate HTML for the nav
+  const createNavItem = (link) => {
+    const isActive = !link.external && (window.location.pathname.endsWith(link.href) || 
+      (link.href === 'projects.html' && window.location.pathname.match(/project[1-3]\.html$/)));
+    const classNames = [isActive ? 'active' : '', link.className].filter(Boolean).join(' ');
     const target = link.external ? '_blank' : '_self';
     const rel = link.external ? 'noopener noreferrer' : '';
     
-    // Combine all relevant class names
-    const classNames = [classActive, link.className].filter(Boolean).join(' ');
+    return `<li class="nav-item"><a href="${link.href}" class="${classNames}" target="${target}" rel="${rel}">${link.text}</a></li>`;
+  };
 
-    // Create the <li> for each link
-    navHTML += `<li class="nav-item"><a href="${link.href}" class="${classNames}" target="${target}" rel="${rel}">${link.text}</a></li>`;
-  });
+  // Build the full navigation HTML
+  const navHTML = `
+    <nav>
+      <ul class="nav-list">
+        ${navLinks.map(createNavItem).join('')}
+      </ul>
+    </nav>
+  `;
 
-  navHTML += '</ul></nav>';
-
-  // Inject the navigation HTML into the placeholder
+  // Inject the navigation into the DOM
   navContainer.innerHTML = navHTML;
+
+  // Mobile menu toggle
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    });
+  }
 });
