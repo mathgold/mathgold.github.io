@@ -67,7 +67,7 @@ nav {
 .nav-list {
   list-style: none;
   display: flex;
-  align-items: center; /* vertically center all nav items including icons */
+  align-items: center;
   justify-content: center;
   gap: 2rem;
   padding: 0;
@@ -83,7 +83,7 @@ nav {
   border-radius: 6px;
   transition: color 0.3s ease, background-color 0.3s ease;
   display: flex;
-  align-items: center; /* center icon and text vertically */
+  align-items: center;
   gap: 0.25em;
   cursor: pointer;
 }
@@ -117,7 +117,7 @@ nav {
   max-width: 1.2em;
   max-height: 1.2em;
   vertical-align: middle;
-  position: static; /* no offset */
+  position: static;
   top: 0;
 }
 
@@ -179,6 +179,47 @@ section p {
 .project-card p {
   font-size: 0.9rem;
   color: var(--color-project-text);
+}
+
+/* Java Programming Article Styles */
+main article {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  margin-bottom: 2rem;
+}
+
+main article h2 {
+  font-size: 2rem;
+  color: var(--color-section-heading);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+main article p {
+  font-size: 1.125rem;
+  color: var(--color-paragraph);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+main article strong {
+  color: #0a6e3e;
+  font-weight: 600;
+}
+
+main article em {
+  font-style: italic;
+  color: #2d3748;
+}
+
+main article .highlight {
+  background-color: #f0f8ff;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  color: #1a202c;
+  font-weight: 600;
 }
 
 /* Responsive */
